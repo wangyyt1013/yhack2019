@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		1605E04B23648F77002E073A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1605E04A23648F77002E073A /* Assets.xcassets */; };
 		1605E04E23648F77002E073A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1605E04C23648F77002E073A /* LaunchScreen.storyboard */; };
 		1605E05923648F77002E073A /* yhack2019Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1605E05823648F77002E073A /* yhack2019Tests.swift */; };
+		161798652364BF8F0063E07F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 161798642364BF8F0063E07F /* GoogleService-Info.plist */; };
 		2CB56802D7BDAA77C5DF7B15 /* Pods_yhack2019Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D009557A42BCCA26B430BB /* Pods_yhack2019Tests.framework */; };
 		75DF6B7BDB0BAC405DB30F13 /* Pods_yhack2019.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9F6826DB61A2338B45DF36 /* Pods_yhack2019.framework */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		1605E05423648F77002E073A /* yhack2019Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yhack2019Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1605E05823648F77002E073A /* yhack2019Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yhack2019Tests.swift; sourceTree = "<group>"; };
 		1605E05A23648F77002E073A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		161798642364BF8F0063E07F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		16D009557A42BCCA26B430BB /* Pods_yhack2019Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yhack2019Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F9F6826DB61A2338B45DF36 /* Pods_yhack2019.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yhack2019.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A733D4A796728368A4768C9 /* Pods-yhack2019Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yhack2019Tests.release.xcconfig"; path = "Target Support Files/Pods-yhack2019Tests/Pods-yhack2019Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				1605E04523648F75002E073A /* ViewController.swift */,
 				1605E04723648F75002E073A /* Main.storyboard */,
 				1605E04A23648F77002E073A /* Assets.xcassets */,
+				161798642364BF8F0063E07F /* GoogleService-Info.plist */,
 				1605E04C23648F77002E073A /* LaunchScreen.storyboard */,
 				1605E04F23648F77002E073A /* Info.plist */,
 			);
@@ -116,7 +119,6 @@
 				60733908418DEF5F1FBBE745 /* Pods-yhack2019Tests.debug.xcconfig */,
 				5A733D4A796728368A4768C9 /* Pods-yhack2019Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -214,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1605E04E23648F77002E073A /* LaunchScreen.storyboard in Resources */,
+				161798652364BF8F0063E07F /* GoogleService-Info.plist in Resources */,
 				1605E04B23648F77002E073A /* Assets.xcassets in Resources */,
 				1605E04923648F75002E073A /* Main.storyboard in Resources */,
 			);
@@ -462,6 +465,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P7XG25DKSV;
 				INFOPLIST_FILE = yhack2019/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -480,6 +484,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P7XG25DKSV;
 				INFOPLIST_FILE = yhack2019/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

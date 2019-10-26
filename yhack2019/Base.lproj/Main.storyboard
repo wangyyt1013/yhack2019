@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,21 +18,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EgY-gt-uiK">
-                                <rect key="frame" x="87" y="269" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4DZ-EO-YqZ">
+                                <rect key="frame" x="100" y="764" width="314" height="49"/>
+                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qC2-vF-TfM">
+                                <rect key="frame" x="0.0" y="764" width="100" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="t7w-z5-e36"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="wMq-kY-8VK"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="selectVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wwE-Ot-7oH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epv-z0-GiV">
+                                <rect key="frame" x="0.0" y="734" width="414" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="907-qX-hsM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qC2-vF-TfM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="720" id="5nL-o3-eZh"/>
+                            <constraint firstItem="qC2-vF-TfM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bjh-jl-1W5"/>
+                            <constraint firstItem="4DZ-EO-YqZ" firstAttribute="top" secondItem="epv-z0-GiV" secondAttribute="bottom" id="C1W-aL-brS"/>
+                            <constraint firstItem="epv-z0-GiV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FMk-Pl-qui"/>
+                            <constraint firstItem="qC2-vF-TfM" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="JmP-4f-PYf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="epv-z0-GiV" secondAttribute="trailing" id="Z5o-ua-iel"/>
+                            <constraint firstItem="4DZ-EO-YqZ" firstAttribute="leading" secondItem="qC2-vF-TfM" secondAttribute="trailing" id="aBP-tf-Vhr"/>
+                            <constraint firstItem="4DZ-EO-YqZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gBg-9c-mVq"/>
+                            <constraint firstItem="4DZ-EO-YqZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ilH-8e-epQ"/>
+                            <constraint firstItem="4DZ-EO-YqZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="720" id="yc9-y0-9Pd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="textView" destination="EgY-gt-uiK" id="yrm-dr-b4d"/>
+                        <outlet property="userInputText" destination="epv-z0-GiV" id="TtF-lJ-tUd"/>
+                        <outlet property="userInputTextField" destination="4DZ-EO-YqZ" id="HFc-mk-9x4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
