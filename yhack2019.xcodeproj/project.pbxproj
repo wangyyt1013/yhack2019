@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,9 @@
 		1605E0792364A624002E073A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1605E0782364A624002E073A /* Assets.xcassets */; };
 		1605E07C2364A624002E073A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1605E07A2364A624002E073A /* LaunchScreen.storyboard */; };
 		1605E0872364A624002E073A /* yhack2019Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1605E0862364A624002E073A /* yhack2019Tests.swift */; };
+		1605E0922364A72C002E073A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1605E0912364A72B002E073A /* GoogleService-Info.plist */; };
+		2F5EB15B43CEEB8A01275CF0 /* Pods_yhack2019.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C80F5EB25BF9850CB2DACACD /* Pods_yhack2019.framework */; };
+		FC22A44944934DE46EBAE0F5 /* Pods_yhack2019Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAE009D98E5AB10450CF4A2 /* Pods_yhack2019Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BA6946BEFE464CA07BAB1B1 /* Pods-yhack2019.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yhack2019.debug.xcconfig"; path = "Target Support Files/Pods-yhack2019/Pods-yhack2019.debug.xcconfig"; sourceTree = "<group>"; };
 		1605E06E2364A622002E073A /* yhack2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yhack2019.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1605E0712364A622002E073A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1605E0732364A622002E073A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +40,12 @@
 		1605E0822364A624002E073A /* yhack2019Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yhack2019Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1605E0862364A624002E073A /* yhack2019Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yhack2019Tests.swift; sourceTree = "<group>"; };
 		1605E0882364A624002E073A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1605E0912364A72B002E073A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		962574951C3C510FE0D3EAC9 /* Pods-yhack2019Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yhack2019Tests.release.xcconfig"; path = "Target Support Files/Pods-yhack2019Tests/Pods-yhack2019Tests.release.xcconfig"; sourceTree = "<group>"; };
+		9DAE009D98E5AB10450CF4A2 /* Pods_yhack2019Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yhack2019Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C80F5EB25BF9850CB2DACACD /* Pods_yhack2019.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yhack2019.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1639CAD09718F59CED4C239 /* Pods-yhack2019Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yhack2019Tests.debug.xcconfig"; path = "Target Support Files/Pods-yhack2019Tests/Pods-yhack2019Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		FB9D008897B6C2DFE162F726 /* Pods-yhack2019.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yhack2019.release.xcconfig"; path = "Target Support Files/Pods-yhack2019/Pods-yhack2019.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F5EB15B43CEEB8A01275CF0 /* Pods_yhack2019.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC22A44944934DE46EBAE0F5 /* Pods_yhack2019Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +74,8 @@
 				1605E0702364A622002E073A /* yhack2019 */,
 				1605E0852364A624002E073A /* yhack2019Tests */,
 				1605E06F2364A622002E073A /* Products */,
+				A75FE624F92C3734853CF7EC /* Pods */,
+				DCAE46D578F12822BFB42082 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +97,7 @@
 				1605E0782364A624002E073A /* Assets.xcassets */,
 				1605E07A2364A624002E073A /* LaunchScreen.storyboard */,
 				1605E07D2364A624002E073A /* Info.plist */,
+				1605E0912364A72B002E073A /* GoogleService-Info.plist */,
 			);
 			path = yhack2019;
 			sourceTree = "<group>";
@@ -96,6 +111,26 @@
 			path = yhack2019Tests;
 			sourceTree = "<group>";
 		};
+		A75FE624F92C3734853CF7EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0BA6946BEFE464CA07BAB1B1 /* Pods-yhack2019.debug.xcconfig */,
+				FB9D008897B6C2DFE162F726 /* Pods-yhack2019.release.xcconfig */,
+				D1639CAD09718F59CED4C239 /* Pods-yhack2019Tests.debug.xcconfig */,
+				962574951C3C510FE0D3EAC9 /* Pods-yhack2019Tests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DCAE46D578F12822BFB42082 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C80F5EB25BF9850CB2DACACD /* Pods_yhack2019.framework */,
+				9DAE009D98E5AB10450CF4A2 /* Pods_yhack2019Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +138,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1605E08B2364A624002E073A /* Build configuration list for PBXNativeTarget "yhack2019" */;
 			buildPhases = (
+				72D94BAB3C13D6CE55965DC1 /* [CP] Check Pods Manifest.lock */,
 				1605E06A2364A622002E073A /* Sources */,
 				1605E06B2364A622002E073A /* Frameworks */,
 				1605E06C2364A622002E073A /* Resources */,
+				F8DE855CF6BEB8A2DD327C69 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -120,6 +157,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1605E08E2364A624002E073A /* Build configuration list for PBXNativeTarget "yhack2019Tests" */;
 			buildPhases = (
+				70600DE45A93C77EED7D87A5 /* [CP] Check Pods Manifest.lock */,
 				1605E07E2364A624002E073A /* Sources */,
 				1605E07F2364A624002E073A /* Frameworks */,
 				1605E0802364A624002E073A /* Resources */,
@@ -178,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1605E07C2364A624002E073A /* LaunchScreen.storyboard in Resources */,
+				1605E0922364A72C002E073A /* GoogleService-Info.plist in Resources */,
 				1605E0792364A624002E073A /* Assets.xcassets in Resources */,
 				1605E0772364A622002E073A /* Main.storyboard in Resources */,
 			);
@@ -191,6 +230,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		70600DE45A93C77EED7D87A5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-yhack2019Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72D94BAB3C13D6CE55965DC1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-yhack2019-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8DE855CF6BEB8A2DD327C69 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-yhack2019/Pods-yhack2019-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-yhack2019/Pods-yhack2019-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-yhack2019/Pods-yhack2019-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1605E06A2364A622002E073A /* Sources */ = {
@@ -358,6 +461,7 @@
 		};
 		1605E08C2364A624002E073A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BA6946BEFE464CA07BAB1B1 /* Pods-yhack2019.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -375,6 +479,7 @@
 		};
 		1605E08D2364A624002E073A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB9D008897B6C2DFE162F726 /* Pods-yhack2019.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -392,6 +497,7 @@
 		};
 		1605E08F2364A624002E073A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1639CAD09718F59CED4C239 /* Pods-yhack2019Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -412,6 +518,7 @@
 		};
 		1605E0902364A624002E073A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 962574951C3C510FE0D3EAC9 /* Pods-yhack2019Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

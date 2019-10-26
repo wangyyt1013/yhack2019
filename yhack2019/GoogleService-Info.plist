@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>524727166631-68veg28afd10ih1mjr33qa7b9p3obo79.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.524727166631-68veg28afd10ih1mjr33qa7b9p3obo79</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBg-t2H5olh9mWyhy4K-Ravn0OUQmU3im4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>524727166631</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>rawe.yhack2019</string>
+	<key>PROJECT_ID</key>
+	<string>spatial-rookery-230600</string>
+	<key>STORAGE_BUCKET</key>
+	<string>spatial-rookery-230600.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:524727166631:ios:7d66a5a2e57b6b32a15d82</string>
+	<key>DATABASE_URL</key>
+	<string>https://spatial-rookery-230600.firebaseio.com</string>
+</dict>
+</plist>
