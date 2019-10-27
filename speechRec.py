@@ -6,10 +6,16 @@ from os.path import expanduser
 import audio_metadata
 
 
-#Collect all .MOV files and transform to FLAC
-home = expanduser("~")
 
-for filename in os.listdir(home + "/Desktop"):
+def sample_recognize(filename):
+    """
+    Transcribe a short audio file using synchronous speech recognition
+
+    Args:
+      local_file_path Path to local audio file, e.g. /path/audio.wav
+    """
+
+
     if (filename.endswith(".MOV")): #or .avi, .mpeg, whatever.
         mp3_filename = filename[:-4] + ".mp3"
         flac_filename = filename[:-4] + ".flac"
@@ -21,15 +27,10 @@ for filename in os.listdir(home + "/Desktop"):
         continue
 
 
+    if (filename.endswith(".flac") and filename[0:4]=="mono"):
+        metadata = audio_metadata.load(filename)
+        sample_frequency = metadata['streaminfo']['sample_rate']
 
-
-def sample_recognize(local_file_path, sample_frequency):
-    """
-    Transcribe a short audio file using synchronous speech recognition
-
-    Args:
-      local_file_path Path to local audio file, e.g. /path/audio.wav
-    """
 
     client = speech_v1.SpeechClient()
 
@@ -49,7 +50,7 @@ def sample_recognize(local_file_path, sample_frequency):
         "sample_rate_hertz": sample_rate_hertz,
         "encoding": "FLAC",
     }
-    with io.open(local_file_path, "rb") as f:
+    with io.open(filename, "rb") as f:
         content = f.read()
     audio = {"content": content}
 
@@ -58,18 +59,9 @@ def sample_recognize(local_file_path, sample_frequency):
         # First alternative is the most probable result
         alternative = result.alternatives[0]
 
-        return "Transcript: {}".format(alternative.transcript)
+        return "{}".format(alternative.transcript)
 
 
-
-for filename in os.listdir(home + "/Desktop"):
-    if (filename.endswith(".flac") and filename[0:4]=="mono"):
-        desired_video = home + "/Desktop/" + filename
-        metadata = audio_metadata.load(desired_video)
-        print(filename + " " + sample_recognize(desired_video, metadata['streaminfo']['sample_rate']))
-
-    else:
-        continue
 
 
 
