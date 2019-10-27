@@ -62,8 +62,3 @@ def sample_recognize(filename):
         return "{}".format(alternative.transcript)
 
 
-
-
-
-
-print(sample_recognize("Sick.MOV"))
