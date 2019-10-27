@@ -5,6 +5,7 @@ from flask_restful import Resource, Api
 import mysql.connector
 from mysql.connector import MySQLConnection, Error
 from python_mysql_dbconfig import read_db_config
+
 from speechRec import sample_recognize
 
 import pyrebase
