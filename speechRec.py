@@ -24,17 +24,17 @@ def sample_recognize(filename):
         os.system("ffmpeg -i " + mp3_filename + " -f flac " + flac_filename + " &> /dev/null")
         os.system("ffmpeg -i " + flac_filename + " -ac 1 " + monoFlac_filename + " &> /dev/null")
     else:
-        continue
+        pass
 
 
     if (filename.endswith(".flac") and filename[0:4]=="mono"):
         metadata = audio_metadata.load(filename)
         sample_frequency = metadata['streaminfo']['sample_rate']
+    else:
+        sample_frequency = 44100
 
 
     client = speech_v1.SpeechClient()
-
-    # local_file_path = 'resources/brooklyn_bridge.raw'
 
     # The language of the supplied audio
     language_code = "en-US"
@@ -50,7 +50,7 @@ def sample_recognize(filename):
         "sample_rate_hertz": sample_rate_hertz,
         "encoding": "FLAC",
     }
-    with io.open(filename, "rb") as f:
+    with io.open(monoFlac_filename, "rb") as f:
         content = f.read()
     audio = {"content": content}
 

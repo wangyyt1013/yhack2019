@@ -30,13 +30,17 @@ class Video(Resource):
     def post(self):
         # get_dict from IOS containing video URL and video name
         some_dict = request.get_json()
+        print("Some_dict: ", some_dict)
         #Pull video from firebase
         #storage.child(some_dict[name]).download("downloaded.jpg")
         storage.child("Sick.MOV").download("downloaded.MOV")
+        print("Download complete!")
+        transcript = sample_recognize("downloaded.MOV")
         #Run speech recogonition
-        
+        query_with_fetchall()
         #Store in SQL
-        print(some_dict)
+        print(transcript)
+        
         return
     def get(self):
         return {'result': num*10}
@@ -44,6 +48,7 @@ class Video(Resource):
 class Message(Resource):
     def post(self):
         some_json = request.get_json()
+
         #HERE: Pull stuff from SQL, Run NLP, sentiment analysis ETC
         return jsonify({'video link': 'URL'})
 
@@ -67,29 +72,39 @@ def connect_sql():
     except Error as e:
         print(e)
     
-    finally:
-        if conn is not None and conn.is_connected():
-            conn.close()
+    #finally:
+    #    if conn is not None and conn.is_connected():
+    #        conn.close()
 
 """Fetch all data from MySQL database"""
 def query_with_fetchall():
+   result = {}
    try:
        dbconfig = read_db_config()
        conn = MySQLConnection(**dbconfig)
        cursor = conn.cursor()
-       cursor.execute("SELECT * FROM url")
+       cursor.execute("SELECT * FROM video")
        rows = cursor.fetchall()
+       #cursor.execute("SELECT * FROM transcript")
+       #transcripts = cursor.fetchall()
 
        print('Total Row(s):', cursor.rowcount)
        for row in rows:
            print(row)
+       #for row_index in range(len(rows)):
+           #result[rows[row_index]] = transcripts[row_index]
+       #print(result)
+       cursor.close()
+       conn.close()
+       #return result
+       return
 
    except Error as e:
        print(e)
 
-   finally:
-       cursor.close()
-       conn.close()
+   #finally:
+       #cursor.close()
+       #conn.close()
        
 """Insert video"""
 def insert_video(title, isbn):
@@ -118,8 +133,13 @@ def insert_video(title, isbn):
        conn.close()
        
        
-"""Set up connection from python to firebase"""
-def config_firebase():
+
+
+
+if __name__ == '__main__':
+    connect_sql()
+    
+    """Set up connection from python to firebase"""
     config = {
       "apiKey": os.getenv("API_KEY"),
       "authDomain": os.getenv("AUTHDOMAIN"),
@@ -129,11 +149,5 @@ def config_firebase():
     }
     firebase = pyrebase.initialize_app(config)
     fdb = firebase.database()
-    
-
-
-
-if __name__ == '__main__':
-    connect_sql()
-    config_firebase()
+    storage = firebase.storage()
     app.run(debug=True)
