@@ -23,7 +23,7 @@ for filename in os.listdir(home + "/Desktop"):
 
 
 
-def sample_recognize(local_file_path, sample_frequency):
+def sample_recognize(content, sample_frequency):
     """
     Transcribe a short audio file using synchronous speech recognition
 
@@ -49,8 +49,8 @@ def sample_recognize(local_file_path, sample_frequency):
         "sample_rate_hertz": sample_rate_hertz,
         "encoding": "FLAC",
     }
-    with io.open(local_file_path, "rb") as f:
-        content = f.read()
+    #with io.open(local_file_path, "rb") as f:
+    #    content = f.read()
     audio = {"content": content}
 
     response = client.recognize(config, audio)

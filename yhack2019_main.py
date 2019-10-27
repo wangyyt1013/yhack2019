@@ -5,6 +5,7 @@ from flask_restful import Resource, Api
 import mysql.connector
 from mysql.connector import MySQLConnection, Error
 from python_mysql_dbconfig import read_db_config
+from speechRec import sample_recognize
 
 import pyrebase
 
@@ -30,8 +31,9 @@ class Video(Resource):
         some_dict = request.get_json()
         #Pull video from firebase
         #storage.child(some_dict[name]).download("downloaded.jpg")
-        storage.child("video-1572138481.mp4").download("downloaded.mp4")
+        storage.child("Sick.MOV").download("downloaded.MOV")
         #Run speech recogonition
+        
         #Store in SQL
         print(some_dict)
         return
