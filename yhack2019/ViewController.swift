@@ -87,14 +87,14 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     // the selected video is stored in firebase
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        guard let videoURL = info[UIImagePickerController.InfoKey.mediaURL] as?
-            URL else {
+        guard let videoURL = info[UIImagePickerController.InfoKey.imageURL] as?
+            NSURL else {
                 fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
-        print("Here's the file URL: ", videoURL)
-        
-        let storageReference = Storage.storage().reference().child(videoURL.lastPathComponent)
-        storageReference.putFile(from: videoURL, metadata: nil, completion: { (metadata, error) in
+
+        let storageReference = Storage.storage().reference().child(videoURL.lastPathComponent!)
+
+        storageReference.putFile(from: videoURL as URL, metadata: nil, completion: { (metadata, error) in
             if error == nil {
                 print("Successful video upload")
                 // some kind of success message is supposed to be shown on the page here
