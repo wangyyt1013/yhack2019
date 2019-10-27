@@ -26,12 +26,14 @@ class HelloWorld(Resource):
         
 class Video(Resource):
     def post(self):
-        some_json = request.get_json()
-        #HERE: Some json should contain video URL
+        # get_dict from IOS containing video URL and video name
+        some_dict = request.get_json()
         #Pull video from firebase
+        #storage.child(some_dict[name]).download("downloaded.jpg")
+        storage.child("video-1572138481.mp4").download("downloaded.mp4")
         #Run speech recogonition
         #Store in SQL
-        print(some_json)
+        print(some_dict)
         return
     def get(self):
         return {'result': num*10}
