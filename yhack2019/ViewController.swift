@@ -26,20 +26,21 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        printMessagesForUser(input: textField.text!, completion: changeLabel(input:))
+        printMessagesForUser(domain: "Message", input: ["message": textField.text!], completion: printCompletion(input:))
     }
     
-    private func changeLabel(input: String) {
-        userInputText.text = input
+    private func printCompletion(input: String) {
+        print("successfully got message from backend: \(input)")
     }
     
     // eventually, this sends user input to Python and get the video url back
-    private func printMessagesForUser(input: String, completion: @escaping(String) -> Void) {
-        let json = ["message":input]
+    private func printMessagesForUser(domain: String, input: [String: String], completion: @escaping(String) -> Void?) {
+        let json = input
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
             
-            let url = NSURL(string: "http://127.0.0.1:5000/")!
+            let url = NSURL(string: "http://127.0.0.1:5000/\(domain)")!
+            
             let request = NSMutableURLRequest(url: url as URL)
             request.httpMethod = "POST"
             
@@ -102,6 +103,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
                 print(error?.localizedDescription ?? "can't load error")
             }
         })
+        
+        printMessagesForUser(domain: "Video", input: ["url": videoURL.absoluteString!, "name": videoURL.lastPathComponent!], completion: printCompletion(input:))
+        
         dismiss(animated: true, completion: nil)
     }
     
