@@ -39,7 +39,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
             
-            let url = NSURL(string: "http://127.0.0.1:5000/\(domain)")!
+            let url = NSURL(string: "http://127.0.0.1:5000/\(domain)/")!
             
             let request = NSMutableURLRequest(url: url as URL)
             request.httpMethod = "POST"
