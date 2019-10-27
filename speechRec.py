@@ -36,8 +36,6 @@ def sample_recognize(filename):
 
     client = speech_v1.SpeechClient()
 
-    # local_file_path = 'resources/brooklyn_bridge.raw'
-
     # The language of the supplied audio
     language_code = "en-US"
 
