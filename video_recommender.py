@@ -16,7 +16,7 @@ import spacy
 
 #Remove stopwords and punctuation
 def preprocess(text):
-    spacy_nlp = spacy.load('en')
+    #spacy_nlp = spacy.load('en')
     spacy_stopwords = spacy.lang.en.stop_words.STOP_WORDS
     doc = spacy_nlp(text)
     tokens = [token for token in doc if (not token.is_stop) and (not token.is_punct)]
@@ -24,7 +24,7 @@ def preprocess(text):
 
 
 def negation_analysis(text):
-    spacy_nlp = spacy.load('en')
+    #spacy_nlp = spacy.load('en')
     doc = spacy_nlp(text)
     tokens = [token.lemma_ for token in doc if (not token.is_punct)]
     negation = [token.lemma_ for token in doc if token.lemma_ in NEGATION_MARKERS or "n't" in token.lemma_]
@@ -158,6 +158,7 @@ def compare_keyword_similarity(user_txt, target_urls_txts, word_list = [], debug
 
 
 if __name__ == '__main__':
+    spacy_nlp = spacy.load('en')
     keyword = "I am really exhausted right now."
     texts = {
         "url0":'Hey! Hope you will feel better soon',
