@@ -12,9 +12,8 @@ import AVFoundation
 
 class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
-    //MARK: Properties
-    @IBOutlet weak var userInputTextField: UITextField!
     @IBOutlet weak var sendVideoPreview: UIImageView!
+    @IBOutlet weak var userInputTextField: UITextField!
 
     var curVideoURL: NSURL? {
         didSet {
@@ -26,16 +25,14 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         super.viewDidLoad()
         userInputTextField.delegate = self
         
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture))
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
         swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
         self.view.addGestureRecognizer(swipeLeft)
         
-//        let swipeGestureRecognizer: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector(("showSecondViewController")))
-//        swipeGestureRecognizer.direction = UISwipeGestureRecognizer.Direction.up
-//        self.view.addGestureRecognizer(swipeGestureRecognizer)
     }
-//    
+    
     @objc func respondToSwipeGesture() {
+        print("swiped left")
         self.performSegue(withIdentifier: "idSegue", sender: self)
     }
     
@@ -90,7 +87,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     //MARK: Action
-   
     @IBAction func sendVideo(_ sender: UIButton) {
         let storageReference = Storage.storage().reference().child(curVideoURL!.lastPathComponent!)
         

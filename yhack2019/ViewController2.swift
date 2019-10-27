@@ -7,21 +7,22 @@
 //
 
 import UIKit
-import Firebase
 import AVFoundation
+import Firebase
 
 @IBDesignable
 class ViewController2: UIViewController {
     @IBOutlet weak var textInput: UITextField!
-    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var containerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: .AVPlayerItemDidPlayToEndTime, object: nil)
         
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture))
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
+        
         swipeRight.direction = UISwipeGestureRecognizer.Direction.right
         self.view.addGestureRecognizer(swipeRight)
         // Do any additional setup after loading the view.
@@ -41,6 +42,7 @@ class ViewController2: UIViewController {
     }
     
     @objc func respondToSwipeGesture() {
+        print("swiped right")
         self.performSegue(withIdentifier: "idSegueBack", sender: self)
     }
 
@@ -56,21 +58,21 @@ class ViewController2: UIViewController {
     
     private func getVideo(url: String){
         let pathRef = Storage.storage().reference(withPath: url)
-        let localURL = NSURL(string: "yhack2019/image/" + NSURL(string: url)?.lastPathComponent)
+        let localURL = NSURL(string: "yhack2019/image/" + (NSURL(string: url)?.lastPathComponent)!)
         
-        let downloadTask = islandRef.write(toFile: localURL) { url, error in
-            if let error = error {
+        _ = pathRef.write(toFile: localURL! as URL) { url, error in
+            if error != nil {
                print("Error in downloading video!")
             }
         }
         
-        let avPlayer = AVPlayer(playerItem: AVPlayerItem(url: localURL))
+        let avPlayer = AVPlayer(playerItem: AVPlayerItem(url: localURL! as URL))
         let avPlayerLayer = AVPlayerLayer(player: avPlayer)
         avPlayerLayer.frame = containerView.bounds
         containerView.layer.insertSublayer(avPlayerLayer, at: 0)
         containerView.isHidden = false
         
-        imageView.image = videoSnapshot(videoURL: localURL)
+        imageView.image = videoSnapshot(videoURL: localURL!)
         imageView.frame = containerView.frame
         containerView.addSubview(imageView)
         

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tyD-O8-Uu5">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,6 +20,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qC2-vF-TfM">
                                 <rect key="frame" x="0.0" y="711" width="100" height="35"/>
+                                <color key="backgroundColor" red="0.98277949119999997" green="1" blue="0.92119581380000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="35" id="Hpi-Y8-7hn"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="P9d-Wf-SsM"/>
@@ -29,7 +30,10 @@
                                     <constraint firstAttribute="width" constant="100" id="v6N-Cg-UOr"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="zkY-Cw-K3C"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Select Video">
+                                    <color key="titleColor" red="1" green="0.27800118282070252" blue="0.98185972761613527" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="selectVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wwE-Ot-7oH"/>
                                 </connections>
@@ -49,20 +53,23 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ors-Dg-0Ta">
                                 <rect key="frame" x="0.0" y="746" width="414" height="48"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" red="1" green="0.72401560087741146" blue="0.9700434418056294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="24"/>
+                                <state key="normal" title="Send!">
+                                    <color key="titleColor" red="0.98277949120241948" green="1" blue="0.92119581375185933" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="Send:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iLI-t0-QCA"/>
-                                    <action selector="sendVideo:" destination="BYZ-38-t0r" eventType="touchDown" id="1W7-bP-hzq"/>
+                                    <action selector="sendVideo:" destination="BYZ-38-t0r" eventType="touchDown" id="DU0-b1-Pci"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send a carePak!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfJ-fR-Fd3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send a carePak!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfJ-fR-Fd3">
                                 <rect key="frame" x="0.0" y="99" width="414" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.87260134930326794" blue="0.21382969583718392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ors-Dg-0Ta" firstAttribute="top" secondItem="Jqs-gB-hes" secondAttribute="bottom" constant="30" id="5S7-8J-SJL"/>
                             <constraint firstItem="sfJ-fR-Fd3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="6c1-8x-OPo"/>
@@ -90,9 +97,9 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="sendVideoPreview" destination="Jqs-gB-hes" id="5ag-yX-wuG"/>
-                        <outlet property="userInputTextField" destination="4DZ-EO-YqZ" id="HFc-mk-9x4"/>
-                        <segue destination="tyD-O8-Uu5" kind="custom" identifier="idSegue" customClass="swipeSegue" customModule="yhack2019" customModuleProvider="target" id="8Vq-WM-B2W"/>
+                        <outlet property="sendVideoPreview" destination="Jqs-gB-hes" id="3U6-R5-Rag"/>
+                        <outlet property="userInputTextField" destination="4DZ-EO-YqZ" id="K4t-ca-yWg"/>
+                        <segue destination="tyD-O8-Uu5" kind="show" identifier="idSegue" id="8Wu-Hh-Aaa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -109,11 +116,11 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How you feelin'?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUk-nG-WqM">
                                 <rect key="frame" x="0.0" y="99" width="414" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bhp-YS-kQR">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write down anything!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bhp-YS-kQR">
                                 <rect key="frame" x="5" y="138" width="404" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="H72-uZ-SkK"/>
@@ -123,14 +130,11 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NGc-QX-zCQ">
-                                <rect key="frame" x="5" y="243" width="404" height="556"/>
+                                <rect key="frame" x="5" y="243" width="404" height="507"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZFx-8C-OvJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="404" height="556"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="404" height="507"/>
                                         <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="1PN-uL-gW6" appends="YES" id="L4J-sn-gIZ"/>
-                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -142,7 +146,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.27800118280000002" blue="0.98185972759999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="bhp-YS-kQR" firstAttribute="top" secondItem="BUk-nG-WqM" secondAttribute="bottom" constant="10" id="2ue-fu-iKv"/>
                             <constraint firstItem="BUk-nG-WqM" firstAttribute="top" secondItem="h71-BQ-hDA" secondAttribute="top" constant="55" id="4dZ-Ca-IbF"/>
@@ -159,13 +163,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h71-BQ-hDA"/>
                         <connections>
-                            <outlet property="containerView" destination="NGc-QX-zCQ" id="x2b-aO-IcO"/>
+                            <outlet property="containerView" destination="NGc-QX-zCQ" id="NDI-ZY-3F0"/>
                             <outlet property="imageView" destination="ZFx-8C-OvJ" id="zFu-Gf-GrB"/>
                             <outlet property="textInput" destination="bhp-YS-kQR" id="eqp-Hs-HpD"/>
                         </connections>
                     </view>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="custom" identifier="idSegueBack" customClass="swipeSegue" customModule="yhack2019" customModuleProvider="target" id="MKU-Aw-7Y5"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="idSegueBack" id="tn5-Ch-qDT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cNb-1a-npT" userLabel="First Responder" sceneMemberID="firstResponder"/>
