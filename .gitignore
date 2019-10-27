@@ -1,4 +1,5 @@
-yhack2019.xcodeproj/xcuserdata/Hui.xcuserdatad/
+.env
+yhack2019.xcodeproj/xcuserdata/
 GoogleService-Info.plist
 Pods/
 Podfile.lock
