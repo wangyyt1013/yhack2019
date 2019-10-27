@@ -5,10 +5,12 @@ from flask_restful import Resource, Api
 import mysql.connector
 from mysql.connector import MySQLConnection, Error
 from python_mysql_dbconfig import read_db_config
+from video_recommender import compare_keyword_similarity
 
 from speechRec import sample_recognize
 
 import pyrebase
+
 
 load_dotenv()
 
@@ -33,24 +35,27 @@ class Video(Resource):
         print("Some_dict: ", some_dict)
         #Pull video from firebase
         #storage.child(some_dict[name]).download("downloaded.jpg")
-        storage.child("Sick.MOV").download("downloaded.MOV")
-        print("Download complete!")
-        transcript = sample_recognize("downloaded.MOV")
+        #storage.child("Sick.MOV").download("downloaded.MOV")
+
+        #transcript = sample_recognize("downloaded.MOV")
         #Run speech recogonition
-        query_with_fetchall()
+        transcript = "Hello"
         #Store in SQL
-        print(transcript)
-        
+        insert_video(some_dict['url'], some_dict['name'], transcript)
+        result = query_with_fetchall()
+        print(result)
         return
-    def get(self):
-        return {'result': num*10}
+
         
 class Message(Resource):
     def post(self):
         some_json = request.get_json()
-
+        # Pull stuff from SQL
+        result_dict = query_with_fetchall()
+        # Run NLP
+        final_url = compare_keyword_similarity(some_json['message'], result_dict)
         #HERE: Pull stuff from SQL, Run NLP, sentiment analysis ETC
-        return jsonify({'video link': 'URL'})
+        return jsonify({'video link': final_url})
 
 
 api.add_resource(HelloWorld, '/')
@@ -85,19 +90,16 @@ def query_with_fetchall():
        cursor = conn.cursor()
        cursor.execute("SELECT * FROM video")
        rows = cursor.fetchall()
-       #cursor.execute("SELECT * FROM transcript")
-       #transcripts = cursor.fetchall()
 
        print('Total Row(s):', cursor.rowcount)
        for row in rows:
            print(row)
        #for row_index in range(len(rows)):
-           #result[rows[row_index]] = transcripts[row_index]
+        #   result[rows[row_index]['url']] = rows[row_index]['transcript']
        #print(result)
        cursor.close()
        conn.close()
-       #return result
-       return
+       return result
 
    except Error as e:
        print(e)
@@ -107,10 +109,10 @@ def query_with_fetchall():
        #conn.close()
        
 """Insert video"""
-def insert_video(title, isbn):
-   query = "INSERT INTO books(title,isbn) " \
-           "VALUES(%s,%s)"
-   args = (title, isbn)
+def insert_video(url, name, transcript):
+   query = "INSERT INTO video(url,name,transcript) " \
+           "VALUES(%s,%s,%s)"
+   args = (url, name, transcript)
 
    try:
        db_config = read_db_config()
