@@ -4,13 +4,13 @@ import io
 import os
 from os.path import expanduser
 import audio_metadata
+import subprocess
 
 
 
 def sample_recognize(filename):
     """
     Transcribe a short audio file using synchronous speech recognition
-
     Args:
       local_file_path Path to local audio file, e.g. /path/audio.wav
     """
@@ -20,6 +20,13 @@ def sample_recognize(filename):
         mp3_filename = filename[:-4] + ".mp3"
         flac_filename = filename[:-4] + ".flac"
         monoFlac_filename = "mono" + flac_filename
+
+
+       #subprocess.call(['ffmpeg', '-i', filename, mp3_filename])
+       #subprocess.call(['ffmpeg', '-i', mp3_filename, '-f', 'flac', flac_filename])
+       #subprocess.call(['ffmpeg', '-i', flac_filename, '-ac', '1', monoFlac_filename])
+
+
         os.system("ffmpeg -i " + filename + " " + mp3_filename + " &> /dev/null")
         os.system("ffmpeg -i " + mp3_filename + " -f flac " + flac_filename + " &> /dev/null")
         os.system("ffmpeg -i " + flac_filename + " -ac 1 " + monoFlac_filename + " &> /dev/null")
@@ -62,3 +69,4 @@ def sample_recognize(filename):
         return "{}".format(alternative.transcript)
 
 
+print(sample_recognize("Sick.MOV"))
