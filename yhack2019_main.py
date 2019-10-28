@@ -5,8 +5,12 @@ from flask_restful import Resource, Api
 import mysql.connector
 from mysql.connector import MySQLConnection, Error
 from python_mysql_dbconfig import read_db_config
+from video_recommender import compare_keyword_similarity
+
+from speechRec import sample_recognize
 
 import pyrebase
+
 
 load_dotenv()
 
@@ -28,21 +32,30 @@ class Video(Resource):
     def post(self):
         # get_dict from IOS containing video URL and video name
         some_dict = request.get_json()
+        print("Some_dict: ", some_dict)
         #Pull video from firebase
         #storage.child(some_dict[name]).download("downloaded.jpg")
-        storage.child("video-1572138481.mp4").download("downloaded.mp4")
+        #storage.child("Sick.MOV").download("downloaded.MOV")
+
+        #transcript = sample_recognize("downloaded.MOV")
         #Run speech recogonition
+        transcript = "Hello"
         #Store in SQL
-        print(some_dict)
+        insert_video(some_dict['url'], some_dict['name'], transcript)
+        result = query_with_fetchall()
+        print(result)
         return
-    def get(self):
-        return {'result': num*10}
+
         
 class Message(Resource):
     def post(self):
         some_json = request.get_json()
+        # Pull stuff from SQL
+        result_dict = query_with_fetchall()
+        # Run NLP
+        final_url = compare_keyword_similarity(some_json['message'], result_dict)
         #HERE: Pull stuff from SQL, Run NLP, sentiment analysis ETC
-        return jsonify({'video link': 'URL'})
+        return jsonify({'video link': final_url})
 
 
 api.add_resource(HelloWorld, '/')
@@ -64,35 +77,42 @@ def connect_sql():
     except Error as e:
         print(e)
     
-    finally:
-        if conn is not None and conn.is_connected():
-            conn.close()
+    #finally:
+    #    if conn is not None and conn.is_connected():
+    #        conn.close()
 
 """Fetch all data from MySQL database"""
 def query_with_fetchall():
+   result = {}
    try:
        dbconfig = read_db_config()
        conn = MySQLConnection(**dbconfig)
        cursor = conn.cursor()
-       cursor.execute("SELECT * FROM url")
+       cursor.execute("SELECT * FROM video")
        rows = cursor.fetchall()
 
        print('Total Row(s):', cursor.rowcount)
        for row in rows:
            print(row)
+       #for row_index in range(len(rows)):
+        #   result[rows[row_index]['url']] = rows[row_index]['transcript']
+       #print(result)
+       cursor.close()
+       conn.close()
+       return result
 
    except Error as e:
        print(e)
 
-   finally:
-       cursor.close()
-       conn.close()
+   #finally:
+       #cursor.close()
+       #conn.close()
        
 """Insert video"""
-def insert_video(title, isbn):
-   query = "INSERT INTO books(title,isbn) " \
-           "VALUES(%s,%s)"
-   args = (title, isbn)
+def insert_video(url, name, transcript):
+   query = "INSERT INTO video(url,name,transcript) " \
+           "VALUES(%s,%s,%s)"
+   args = (url, name, transcript)
 
    try:
        db_config = read_db_config()
@@ -115,8 +135,13 @@ def insert_video(title, isbn):
        conn.close()
        
        
-"""Set up connection from python to firebase"""
-def config_firebase():
+
+
+
+if __name__ == '__main__':
+    connect_sql()
+    
+    """Set up connection from python to firebase"""
     config = {
       "apiKey": os.getenv("API_KEY"),
       "authDomain": os.getenv("AUTHDOMAIN"),
@@ -126,11 +151,5 @@ def config_firebase():
     }
     firebase = pyrebase.initialize_app(config)
     fdb = firebase.database()
-    
-
-
-
-if __name__ == '__main__':
-    connect_sql()
-    config_firebase()
+    storage = firebase.storage()
     app.run(debug=True)

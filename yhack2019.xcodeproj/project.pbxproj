@@ -13,12 +13,9 @@
 		1605E04B23648F77002E073A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1605E04A23648F77002E073A /* Assets.xcassets */; };
 		1605E05923648F77002E073A /* yhack2019Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1605E05823648F77002E073A /* yhack2019Tests.swift */; };
 		165496AF23651F4600276281 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 165496AE23651F4600276281 /* GoogleService-Info.plist */; };
-		165496B02365223500276281 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 165496AE23651F4600276281 /* GoogleService-Info.plist */; };
-		165496B823655D4200276281 /* swipeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165496B723655D4200276281 /* swipeSegue.swift */; };
 		165496BC2365641800276281 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165496BB2365641800276281 /* ViewController2.swift */; };
 		2CB56802D7BDAA77C5DF7B15 /* Pods_yhack2019Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D009557A42BCCA26B430BB /* Pods_yhack2019Tests.framework */; };
 		75DF6B7BDB0BAC405DB30F13 /* Pods_yhack2019.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9F6826DB61A2338B45DF36 /* Pods_yhack2019.framework */; };
-		A54C12E02365354F0033E958 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A54C12DF2365354F0033E958 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,14 +39,12 @@
 		1605E05823648F77002E073A /* yhack2019Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yhack2019Tests.swift; sourceTree = "<group>"; };
 		1605E05A23648F77002E073A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		165496AE23651F4600276281 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		165496B723655D4200276281 /* swipeSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swipeSegue.swift; sourceTree = "<group>"; };
 		165496BB2365641800276281 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		16D009557A42BCCA26B430BB /* Pods_yhack2019Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yhack2019Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F9F6826DB61A2338B45DF36 /* Pods_yhack2019.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yhack2019.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A733D4A796728368A4768C9 /* Pods-yhack2019Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yhack2019Tests.release.xcconfig"; path = "Target Support Files/Pods-yhack2019Tests/Pods-yhack2019Tests.release.xcconfig"; sourceTree = "<group>"; };
 		60733908418DEF5F1FBBE745 /* Pods-yhack2019Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yhack2019Tests.debug.xcconfig"; path = "Target Support Files/Pods-yhack2019Tests/Pods-yhack2019Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9C96E5678CD2B85164D8D931 /* Pods-yhack2019.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yhack2019.release.xcconfig"; path = "Target Support Files/Pods-yhack2019/Pods-yhack2019.release.xcconfig"; sourceTree = "<group>"; };
-		A54C12DF2365354F0033E958 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AD949FDC27999CBB35E6535A /* Pods-yhack2019.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yhack2019.debug.xcconfig"; path = "Target Support Files/Pods-yhack2019/Pods-yhack2019.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,7 +95,6 @@
 				1605E04523648F75002E073A /* ViewController.swift */,
 				1605E04723648F75002E073A /* Main.storyboard */,
 				165496BB2365641800276281 /* ViewController2.swift */,
-				165496B723655D4200276281 /* swipeSegue.swift */,
 				1605E04A23648F77002E073A /* Assets.xcassets */,
 				165496AE23651F4600276281 /* GoogleService-Info.plist */,
 				1605E04F23648F77002E073A /* Info.plist */,
@@ -306,7 +300,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				165496BC2365641800276281 /* ViewController2.swift in Sources */,
-				165496B823655D4200276281 /* swipeSegue.swift in Sources */,
 				1605E04623648F75002E073A /* ViewController.swift in Sources */,
 				1605E04423648F75002E073A /* AppDelegate.swift in Sources */,
 			);
